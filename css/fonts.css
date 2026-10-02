@@ -1,0 +1,27 @@
+/*
+fonts:
+Bricolage Grotesque
+Atkinson Hyperlegible
+Inter
+*/
+
+@font-face {
+    font-family: "bricola-gegrotesque";
+    src: url("../assets/fonts/BricolageGrotesque/bricolage-grotesque-latin-ext-standard-normal.woff2");
+    font-size: 500 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "atkinson-hyperlegible";
+    src: url("../assets/fonts/AtkinsonHyperlegible/atkinson-hyperlegible-latin-700-normal.ttf");
+    font-size: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url("../assets/fonts/Inter/inter-latin-ext-standard-normal.woff2");
+    font-size: 500;
+    font-style: normal;
+}
