@@ -5,6 +5,8 @@
 }
 body,html{
     background-color: #E9EAEF;
+    overflow-x: hidden;
+    max-width: 100vw;
 }
 
 /*HEADER*/
@@ -117,6 +119,14 @@ div.container-btns{
     justify-content: space-between;
     flex-direction: row;
 
+    #btn-aluno, #btn-cidadao, #btn-eleitor {
+        cursor: pointer;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    #btn-aluno:hover, #btn-cidadao:hover, #btn-eleitor:hover {
+        transform: translateY(-2px);
+    }
+
     #btn-aluno{
         background-color: #FFC83D;
         border-radius: 20px;
@@ -188,4 +198,247 @@ div.container-btns{
             width: 80%;
         }
     }
+}
+
+/* CARD DE DIREITOS */
+
+.container-card-direito {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 50px 20px 80px 20px;
+}
+
+.cards-wrapper {
+    width: 100%;
+    max-width: 720px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-direito {
+    width: 100%;
+    border-radius: 24px;
+    padding: 35px 30px;
+    display: none;
+    flex-direction: column;
+    gap: 25px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+    border-top: 12px solid #8D6D1B;
+}
+
+/*apenas o card selecionado fica visivel, quando for fazer a animação nicolas, confira isso*/
+.card-direito.active {
+    display: flex;
+}
+
+.card-header h2 {
+    font-family: "bricola-gegrotesque", sans-serif;
+    font-weight: 700;
+    font-size: clamp(28px, 4vw, 36px);
+    color: #FFFFFF;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+}
+
+.card-header p {
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: clamp(14px, 2vw, 16px);
+    line-height: 1.45;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.item-direito {
+    border-top: 1.5px solid;
+    padding: 20px 0;
+    transition: border-color 0.3s ease;
+}
+
+.item-direito:last-child {
+    border-bottom: 1.5px solid;
+}
+
+.item-direito summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+}
+
+.item-direito summary::-webkit-details-marker {
+    display: none;
+}
+
+.item-info h3 {
+    font-family: "bricola-gegrotesque", sans-serif;
+    font-weight: 700;
+    font-size: clamp(17px, 2.5vw, 21px);
+    color: #FFFFFF;
+    margin-bottom: 6px;
+    letter-spacing: 0.3px;
+}
+
+.item-info p {
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: clamp(13px, 2vw, 15px);
+    line-height: 1.4;
+}
+
+.btn-toggle {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    border-radius: 50%;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Inter", sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.item-direito summary:hover .btn-toggle {
+    transform: scale(1.08);
+}
+
+.item-direito[open] summary .btn-toggle {
+    transform: rotate(45deg);
+}
+
+.resposta-lei {
+    margin-top: 16px;
+    padding: 16px 18px;
+    border-left: 4px solid;
+    border-radius: 10px;
+    animation: fadeIn 0.25s ease-in-out;
+}
+
+.resposta-lei p {
+    font-family: "Inter", sans-serif;
+    font-size: clamp(13px, 1.8vw, 14.5px);
+    line-height: 1.5;
+}
+
+.resposta-lei strong {
+    color: inherit;
+}
+
+.card-alerta {
+    border-radius: 16px;
+    padding: 24px 26px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+    border-left: 10px solid #8D6D1B;
+}
+
+.card-alerta h3 {
+    font-family: "bricola-gegrotesque", sans-serif;
+    font-weight: 700;
+    font-size: clamp(16px, 2.5vw, 19px);
+    color: #FFFFFF;
+    margin-bottom: 10px;
+    letter-spacing: 0.3px;
+}
+
+.card-alerta p {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: clamp(13px, 2vw, 14.5px);
+    color: #E2D7BE;
+    line-height: 1.55;
+}
+
+/* CORES DOS CARDS */
+
+
+/* Card Aluno */
+.card-direito.card-aluno {
+    background-color: #FFC83D;
+    border-top-color: #8D6D1B;
+}
+.card-direito.card-aluno .card-header p,
+.card-direito.card-aluno .item-info p {
+    color: #4A3C08;
+}
+.card-direito.card-aluno .item-direito {
+    border-color: #382C07;
+}
+.card-direito.card-aluno .btn-toggle,
+.card-direito.card-aluno .card-alerta {
+    background-color: #382C07;
+}
+.card-direito.card-aluno .resposta-lei {
+    background-color: rgba(56, 44, 7, 0.12);
+    border-left-color: #382C07;
+    color: #2D2305;
+}
+.card-direito.card-aluno .card-alerta {
+    border-left-color: #8D6D1B;
+}
+
+
+/* Card Cidadão */
+.card-direito.card-cidadao {
+    background-color: #1FB081;
+    border-top-color: #115841;
+}
+.card-direito.card-cidadao .card-header p,
+.card-direito.card-cidadao .item-info p {
+    color: #0B4533;
+} 
+.card-direito.card-cidadao .item-direito {
+    border-color: #0A382A;
+}
+.card-direito.card-cidadao .btn-toggle,
+.card-direito.card-cidadao .card-alerta {
+    background-color: #0A382A;
+}
+.card-direito.card-cidadao .resposta-lei {
+    background-color: rgba(10, 56, 42, 0.12);
+    border-left-color: #0A382A;
+    color: #06241B;
+}
+.card-direito.card-cidadao .card-alerta {
+    border-left-color: #115841;
+}
+
+
+
+/* Card Eleitor */
+.card-direito.card-eleitor {
+    background-color: #7592FF;
+    border-top-color: #4A60B4;
+}
+.card-direito.card-eleitor .card-header p,
+.card-direito.card-eleitor .item-info p {
+    color: #192C70;
+}
+.card-direito.card-eleitor .item-direito {
+    border-color: #132257;
+}
+.card-direito.card-eleitor .btn-toggle,
+.card-direito.card-eleitor .card-alerta {
+    background-color: #132257;
+}
+.card-direito.card-eleitor .resposta-lei {
+    background-color: rgba(19, 34, 87, 0.12);
+    border-left-color: #132257;
+    color: #0B1436;
+}
+.card-direito.card-eleitor .card-alerta {
+    border-left-color: #4A60B4;
 }
