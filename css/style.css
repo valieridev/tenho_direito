@@ -85,7 +85,7 @@ div.container-textos{
     gap: 30px;
 }
 div.container-titulo{
-    h1{
+    h1,h2{
         font-family: "bricola-gegrotesque";
         font-weight: 700;
         font-size: clamp(30px,7vw, 50px);
@@ -228,7 +228,7 @@ div.container-btns{
     border-top: 12px solid #8D6D1B;
 }
 
-/*apenas o card selecionado fica visivel, quando for fazer a animação nicolas, confira isso*/
+/*apenas o card selecionado fica visivel, quando for fazer a animação nicolas, confira isso, o card visivel tera essa classe*/
 .card-direito.active {
     display: flex;
 }
@@ -258,25 +258,34 @@ div.container-btns{
     border-top: 1.5px solid;
     padding: 20px 0;
     transition: border-color 0.3s ease;
+    
+    .item-direito:last-child {
+        border-bottom: 1.5px solid;
+    }
+    
+    summary {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        cursor: pointer;
+        list-style: none;
+        user-select: none;
+    }
+    
+    summary::-webkit-details-marker {
+        display: none;
+    }
+}
+.item-direito summary:hover .btn-toggle {
+    transform: scale(1.08);
 }
 
-.item-direito:last-child {
-    border-bottom: 1.5px solid;
+.item-direito[open] summary .btn-toggle {
+    transform: rotate(45deg);
 }
 
-.item-direito summary {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    cursor: pointer;
-    list-style: none;
-    user-select: none;
-}
 
-.item-direito summary::-webkit-details-marker {
-    display: none;
-}
 
 .item-info h3 {
     font-family: "bricola-gegrotesque", sans-serif;
@@ -311,13 +320,6 @@ div.container-btns{
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
-.item-direito summary:hover .btn-toggle {
-    transform: scale(1.08);
-}
-
-.item-direito[open] summary .btn-toggle {
-    transform: rotate(45deg);
-}
 
 .resposta-lei {
     margin-top: 16px;
@@ -325,17 +327,18 @@ div.container-btns{
     border-left: 4px solid;
     border-radius: 10px;
     animation: fadeIn 0.25s ease-in-out;
+    
+    p{
+        font-family: "Inter", sans-serif;
+        font-size: clamp(13px, 1.8vw, 14.5px);
+        line-height: 1.5;
+    }
+    strong{
+        color: inherit;
+    }
 }
 
-.resposta-lei p {
-    font-family: "Inter", sans-serif;
-    font-size: clamp(13px, 1.8vw, 14.5px);
-    line-height: 1.5;
-}
 
-.resposta-lei strong {
-    color: inherit;
-}
 
 .card-alerta {
     border-radius: 16px;
@@ -343,24 +346,25 @@ div.container-btns{
     margin-top: 10px;
     transition: background-color 0.3s ease;
     border-left: 10px solid #8D6D1B;
+    
+    h3{
+        font-family: "bricola-gegrotesque", sans-serif;
+        font-weight: 700;
+        font-size: clamp(16px, 2.5vw, 19px);
+        color: #FFFFFF;
+        margin-bottom: 10px;
+        letter-spacing: 0.3px;
+    }
+    p{
+        font-family: "Inter", sans-serif;
+        font-weight: 400;
+        font-size: clamp(13px, 2vw, 14.5px);
+        color: #E2D7BE;
+        line-height: 1.55;
+    }
 }
 
-.card-alerta h3 {
-    font-family: "bricola-gegrotesque", sans-serif;
-    font-weight: 700;
-    font-size: clamp(16px, 2.5vw, 19px);
-    color: #FFFFFF;
-    margin-bottom: 10px;
-    letter-spacing: 0.3px;
-}
 
-.card-alerta p {
-    font-family: "Inter", sans-serif;
-    font-weight: 400;
-    font-size: clamp(13px, 2vw, 14.5px);
-    color: #E2D7BE;
-    line-height: 1.55;
-}
 
 /* CORES DOS CARDS */
 
@@ -441,4 +445,172 @@ div.container-btns{
 }
 .card-direito.card-eleitor .card-alerta {
     border-left-color: #4A60B4;
+}
+
+
+/*container info idades*/
+
+.container-info-idades{
+    width: 100%;
+    padding: 50px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10vh;
+}
+
+.header-info-idades{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+
+    h1{
+        font-family: "atkinson-hyperlegible";
+        font-weight: 600;
+        font-size: clamp(25px, 5vw,40px);
+        letter-spacing: 1px;
+        color: #0B1436;
+    }
+    p{
+        font-family: "Inter";
+        font-weight: 600;
+        color: #B2ABAB;
+        font-size: clamp(12px, 5vw,18px);
+    }
+}
+
+.container-idades{
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    padding-left: 5vw;
+}
+
+.idades{
+    display: flex;
+    flex-direction: column;
+    gap: 33px;
+    margin-right: 5vw;
+    h2{
+        font-family: "atkinson-hyperlegible";
+        font-weight: 600;
+        font-size: clamp(20px, 5vw,30px);
+        letter-spacing: 1px;
+        color: #0A0A0A;
+    }
+}
+
+
+.linha {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 40px; 
+  background-color: #ebedf2; 
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-right: 3vw;
+}
+
+.circulo {
+  position: relative;
+  height: 70px;
+  border-left: 2px solid #dcdfe6; 
+}
+
+
+.circulo:last-child {
+  border-left: 2px solid transparent;
+}
+
+
+.circulo::before {
+  content: '';
+  position: absolute;
+  left: -9px; 
+  top: 0;
+  width: 20px; 
+  height: 20px;
+  background-color: #ffcc4d; 
+  border-radius: 50%; 
+}
+
+.info-idades{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    h3{
+        font-family: "atkinson-hyperlegible";
+        font-weight: 600;
+        font-size: clamp(12px, 5vw,20px);
+        letter-spacing: 1px;
+        color: #0A0A0A;
+    }
+    p{
+        font-family: "Inter";
+        font-weight: 600;
+        font-size: clamp(10px, 5vw,15px);
+        letter-spacing: 1px;
+        color: #B2ABAB;
+    }
+}
+
+hr{
+    background-color: #0B1436;
+    width: 90%;
+    height: 3px;
+    border-radius:2px ; 
+    border: none;
+    margin: 0 auto;
+}
+
+.fontes{
+    min-height: 40vh;
+    padding: 70px 20px 20px 20px;
+    gap: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    button{
+        background-color: #15164C;
+        padding: 8px 10px;
+        border-radius: 20px;
+        border: none;
+
+        a{
+            font-family: "bricola-gegrotesque", sans-serif;
+            font-weight: 600;
+            color: white;
+            font-size: clamp(12px, 5vw, 16px);
+            letter-spacing: 2px;
+            text-decoration: none;
+        }
+    }
+}
+.container-fontes{
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+    h1{
+       font-family: "atkinson-hyperlegible";
+        font-weight: 600;
+        font-size: clamp(20px, 5vw,30px);
+        letter-spacing: 1px;
+        color: #0A0A0A; 
+    }
+    p{
+        font-family: "Inter";
+        font-weight: 600;
+        font-size: clamp(10px, 5vw,15px);
+        letter-spacing: 1px;
+        color: #B2ABAB;
+    }
+    
 }
