@@ -3,3 +3,189 @@
     padding: 0;
     box-sizing: border-box;
 }
+body,html{
+    background-color: #E9EAEF;
+}
+
+/*HEADER*/
+
+header{
+    width: 100%;
+    background-color: transparent;
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: fixed;
+}
+header nav{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+nav ul{
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+
+    li{
+        list-style: none;
+        font-size: clamp(15px,5vw,20px);
+        font-family: "bricola-gegrotesque", sans-serif;
+        font-weight: 600;
+        letter-spacing: 2px;
+        color: #15164C;
+    }
+}
+nav button{
+    background-color: #15164C;
+    padding: 8px 10px;
+    border-radius: 20px;
+    border: none;
+
+    a{
+        font-family: "bricola-gegrotesque", sans-serif;
+        font-weight: 600;
+        color: white;
+        font-size: clamp(12px, 5vw, 16px);
+        letter-spacing: 2px;
+        text-decoration: none;
+    }
+}
+nav img{
+    width: 50px;
+    height: 50px;
+}
+
+/*MAIN*/
+
+main{
+    width: 100%;
+    min-height: 100vh;
+    padding-top: 8vh;
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+}
+div.container-inicial{
+    width: 100%;
+    padding: 30px 20px 20px 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+div.container-textos{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+div.container-titulo{
+    h1{
+        font-family: "bricola-gegrotesque";
+        font-weight: 700;
+        font-size: clamp(30px,7vw, 50px);
+        color: #0F1031;
+        letter-spacing: 2px;
+    }
+}
+   
+div.container-paragrafo p{
+    font-family: "Inter";
+    font-size: clamp(12px,5vw, 20px);
+    color: #B2ABAB;
+    width: 80%;
+}
+
+div.container-img img{
+    width: 600px;
+    height: 330px;
+}
+
+
+/*parte dos cards de direitos*/
+
+/*botoes*/
+
+div.container-btns{
+    width: 100%;
+    padding: 8vh 50px 0px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+
+    #btn-aluno{
+        background-color: #FFC83D;
+        border-radius: 20px;
+        border: none;
+        text-align: start;
+        display: flex;
+        flex-direction: column;
+        padding: 10px 10px;
+        width: 25%;
+        
+        h3{
+            font-family: "bricola-gegrotesque";
+            font-weight: 600;
+            font-size: clamp(15px,5vw, 22px);
+            color: #0F1031;
+            
+        }
+        p{
+            font-family: "Inter";
+            font-size: clamp(12px,5vw, 16px);
+            color: #8D6D1B;
+            
+        }
+    }
+    #btn-cidadao{
+        background-color: #1FB081;
+        border-radius: 20px;
+        border: none;
+        text-align: start;
+        display: flex;
+        flex-direction: column;
+        padding: 10px 10px;
+        width: 25%;
+        
+        h3{
+            font-family: "bricola-gegrotesque";
+            font-weight: 600;
+            font-size: clamp(15px,5vw, 22px);
+            color: #0F1031;
+            
+        }
+        p{
+            font-family: "Inter";
+            font-size: clamp(12px,5vw, 16px);
+            color: #115841;
+            
+        }
+    }
+    #btn-eleitor{
+        background-color: #7592FF;
+        border-radius: 20px;
+        border: none;
+        text-align: start;
+        display: flex;
+        flex-direction: column;
+        padding: 10px 10px;
+        width: 25%;
+        
+        h3{
+            font-family: "bricola-gegrotesque";
+            font-weight: 600;
+            font-size: clamp(15px,5vw, 22px);
+            color: #0F1031;
+        }
+        p{
+            font-family: "Inter";
+            font-size: clamp(12px,5vw, 16px);
+            color: #4A60B4;
+            width: 80%;
+        }
+    }
+}
