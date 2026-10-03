@@ -86,27 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const observerOptions = { threshold: 0.15 };
 
-    // 0) .header-info-idades → letra por letra no h1 e p
     const headerIdades = document.querySelector('.header-info-idades');
-    if (headerIdades) {
-        const headerH1 = headerIdades.querySelector('h1');
-        const headerP  = headerIdades.querySelector('p');
-        // esconde até animar
-        if (headerH1) headerH1.style.opacity = '0';
-        if (headerP)  headerP.style.opacity  = '0';
-
-        const headerObserver = new IntersectionObserver((entries, obs) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    let d = 100;
-                    if (headerH1) { headerH1.style.opacity = '1'; d = animarLetras(headerH1, d); }
-                    if (headerP)  { headerP.style.opacity  = '1'; animarLetras(headerP, d + 120); }
-                    obs.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-        headerObserver.observe(headerIdades);
-    }
 
     // 1) .container-fontes → slideFromLeft (mesma dos cards)
     const fontes = document.querySelector('.container-fontes');
@@ -122,32 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
         fontesObserver.observe(fontes);
     }
 
-    // 2) .container-textos-info-idades → letra por letra
     const textosIdades = document.querySelectorAll('.container-textos-info-idades');
-    if (textosIdades.length) {
-        const letrasObserver = new IntersectionObserver((entries, obs) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const el = entry.target;
-                    // Primeiro torna visível com slide
-                    el.classList.add('visible');
-
-                    // Depois aplica letra por letra nos textos internos
-                    const h3 = el.querySelector('h3');
-                    const p  = el.querySelector('p');
-                    let d = 100;
-                    if (h3) d = animarLetras(h3, d);
-                    if (p)  animarLetras(p, d + 80);
-
-                    obs.unobserve(el);
-                }
-            });
-        }, { threshold: 0.2 });
-
-        textosIdades.forEach(el => letrasObserver.observe(el));
-    }
-
-    // 3) .idades e .linha-cronologica → slide sutil da esquerda
     const idades = document.querySelector('.idades');
     const linhaCrono = document.querySelector('.linha-cronologica');
 
@@ -160,6 +115,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    if (idades)    slideObserver.observe(idades);
+    if (headerIdades) slideObserver.observe(headerIdades);
+    textosIdades.forEach(el => slideObserver.observe(el));
+    if (idades) slideObserver.observe(idades);
     if (linhaCrono) slideObserver.observe(linhaCrono);
 });

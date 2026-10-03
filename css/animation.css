@@ -115,6 +115,22 @@
     }
 }
 
+/* --- header info idades --- */
+.header-info-idades h1,
+.header-info-idades p {
+    opacity: 0;
+}
+.header-info-idades.visible h1,
+.header-info-idades.visible p {
+    animation: slideFromLeftSubtle 0.5s ease forwards;
+}
+.header-info-idades.visible h1 {
+    animation-delay: 0.05s;
+}
+.header-info-idades.visible p {
+    animation-delay: 0.15s;
+}
+
 /* --- container .idades (números) --- */
 .idades h2 {
     opacity: 0;
@@ -147,7 +163,7 @@
 .linha-cronologica.visible .linha .circulo:nth-child(7) { animation-delay: 0.35s; }
 .linha-cronologica.visible .linha .circulo:nth-child(8) { animation-delay: 0.4s; }
 
-/* --- container-textos-info-idades (slide sutil, antes da animação letra por letra) --- */
+/* --- container-textos-info-idades (slide sutil + opacidade) --- */
 .container-textos-info-idades {
     opacity: 0;
 }
