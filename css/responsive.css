@@ -1,0 +1,381 @@
+
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 1001;
+}
+
+.hamburger span {
+    display: block;
+    width: 26px;
+    height: 3px;
+    background-color: #15164C;
+    border-radius: 3px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+
+
+@media screen and (max-width: 768px) {
+
+    .hamburger {
+        display: flex;
+    }
+
+    header {
+        padding: 10px 16px;
+        background-color: #E9EAEF;
+        z-index: 1000;
+    }
+
+    header nav {
+        flex-wrap: wrap;
+    }
+
+    .nav-logo {
+        display: none;
+    }
+
+    nav .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+        padding: 15px 0 5px 0;
+        border-top: 1px solid rgba(15, 16, 49, 0.1);
+        margin-top: 10px;
+    }
+
+    nav .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links li {
+        padding: 10px 0;
+    }
+
+    .nav-links li a {
+        font-size: 16px;
+    }
+
+    nav button.btn-quiz-nav {
+        padding: 6px 12px;
+        border-radius: 16px;
+    }
+
+    nav button.btn-quiz-nav a {
+        font-size: 13px;
+        letter-spacing: 1px;
+    }
+
+    /* --- HERO SECTION --- */
+    div.container-inicial {
+        flex-direction: column;
+        padding: 20px 20px 10px 20px;
+        gap: 20px;
+        text-align: left;
+    }
+
+    div.container-textos {
+        gap: 16px;
+        width: 100%;
+    }
+
+    div.container-titulo h1,
+    div.container-titulo h2 {
+        font-size: 26px;
+        line-height: 1.15;
+    }
+
+    div.container-paragrafo p {
+        font-size: 14px;
+        width: 100%;
+        line-height: 1.5;
+    }
+
+    div.container-img {
+        display: none;
+    }
+
+    /* --- CATEGORY BUTTONS --- */
+    div.container-btns {
+        padding: 20px 20px 0 20px;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    div.container-btns #btn-aluno,
+    div.container-btns #btn-cidadao,
+    div.container-btns #btn-eleitor {
+        width: auto;
+        min-width: unset;
+        padding: 10px 20px;
+        border-radius: 30px;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+
+    div.container-btns #btn-aluno p,
+    div.container-btns #btn-cidadao p,
+    div.container-btns #btn-eleitor p {
+        display: none;
+    }
+
+    div.container-btns #btn-aluno h3,
+    div.container-btns #btn-cidadao h3,
+    div.container-btns #btn-eleitor h3 {
+        font-size: 15px;
+        text-align: center;
+    }
+
+    /* --- CARDS DE DIREITO --- */
+    #container-card-direito {
+        padding: 30px 16px 50px 16px;
+    }
+
+    .cards-wrapper {
+        max-width: 100%;
+    }
+
+    .card-direito {
+        padding: 24px 18px;
+        border-radius: 18px;
+        gap: 18px;
+    }
+
+    .card-header h2 {
+        font-size: 22px;
+        margin-bottom: 8px;
+    }
+
+    .card-header p {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    .item-info h3 {
+        font-size: 15px;
+        margin-bottom: 4px;
+    }
+
+    .item-info p {
+        font-size: 12px;
+        line-height: 1.4;
+    }
+
+    .item-direito {
+        padding: 14px 0;
+    }
+
+    .item-direito summary {
+        gap: 12px;
+    }
+
+    .btn-toggle {
+        width: 32px;
+        height: 32px;
+        min-width: 32px;
+        font-size: 18px;
+    }
+
+    .resposta-lei {
+        margin-top: 12px;
+        padding: 12px 14px;
+    }
+
+    .resposta-lei p {
+        font-size: 12px;
+    }
+
+    .card-alerta {
+        padding: 18px 16px;
+        border-radius: 14px;
+        border-left-width: 6px;
+    }
+
+    .card-alerta h3 {
+        font-size: 15px;
+        margin-bottom: 8px;
+    }
+
+    .card-alerta p {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    /* --- INFO IDADES --- */
+    #container-info-idades {
+        padding: 30px 16px;
+        gap: 30px;
+    }
+
+    .header-info-idades {
+        width: 100%;
+
+    }
+
+    .header-info-idades h1 {
+        font-size: 22px;
+    }
+
+    .header-info-idades p {
+        font-size: 13px;
+    }
+
+    .container-idades {
+        width: 100%;
+        padding-left: 0;
+        flex-direction: row;
+    }
+
+    .idades {
+        margin-right: 16px;
+    }
+
+    .idades h2 {
+        font-size: 20px;
+        line-height: 1;
+    }
+
+    .linha {
+        padding-left: 20px;
+        margin-right: 16px;
+    }
+
+    .circulo {
+        height: 55px;
+    }
+
+    .circulo::before {
+        width: 16px;
+        height: 16px;
+        left: -7px;
+    }
+
+    .info-idades {
+        gap: 15px;
+    }
+
+    .info-idades h3 {
+        font-size: 14px;
+    }
+
+    .info-idades p {
+        font-size: 11px;
+    }
+
+    .container-textos-info-idades {
+        min-height: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    
+    hr {
+        width: 90%;
+    }
+
+    #fontes {
+        min-height: auto;
+        padding: 40px 16px 30px 16px;
+        gap: 30px;
+    }
+
+    .container-fontes {
+        width: 100%;
+    }
+
+    .container-fontes h1 {
+        font-size: 22px;
+    }
+
+    .container-fontes p {
+        font-size: 12px;
+        line-height: 1.6;
+    }
+
+    #fontes button {
+        width: 100%;
+        max-width: 300px;
+        padding: 12px 16px;
+        border-radius: 24px;
+    }
+
+    #fontes button a {
+        font-size: 14px;
+    }
+}
+
+
+
+@media screen and (max-width: 450px) {
+    div.container-titulo h1,
+    div.container-titulo h2 {
+        font-size: 18px;
+    }
+
+    div.container-btns {
+        gap: 8px;
+    }
+
+    div.container-btns #btn-aluno h3,
+    div.container-btns #btn-cidadao h3,
+    div.container-btns #btn-eleitor h3 {
+        font-size: 13px;
+    }
+
+    div.container-btns #btn-aluno,
+    div.container-btns #btn-cidadao,
+    div.container-btns #btn-eleitor {
+        padding: 8px 14px;
+    }
+
+
+    .idades {
+        gap: 35px;
+        h2{
+            font-size: 30px;
+        }
+    }
+
+    .circulo {
+        height: 65px;
+    }
+    .info-idades{
+        gap: 22px;
+    }
+    .container-textos-info-idades{
+        h3{
+            font-size: 12px;
+        }
+        p{
+            font-size: 10px;
+        }
+    }
+
+    .fontes button{
+        padding: 10px 5px;
+    }
+}

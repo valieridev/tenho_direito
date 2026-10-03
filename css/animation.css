@@ -1,4 +1,15 @@
-/* Arquivo de animações */
+.btn-quiz-nav{
+    transition: 0.5s all ease-in-out;
+}
+.btn-quiz-nav:hover{
+    transform: translateY(-5px);
+}
+.fontes button{
+    transition: 0.5s all ease-in-out;
+}
+.fontes button:hover{
+    transform: translateY(-5px);
+}
 
 @keyframes fadeIn {
     from {
@@ -9,4 +20,166 @@
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+.container-img img{
+    animation: slideFromLeft 0.6s ease forwards;
+}
+@keyframes letraNascer {
+    0% {
+        opacity: 0;
+        filter: blur(6px);
+        transform: translateY(8px);
+    }
+    60% {
+        filter: blur(0);
+    }
+    100% {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateY(0);
+    }
+}
+
+.letra {
+    display: inline-block;
+    opacity: 0;
+    animation: letraNascer 0.4s ease forwards;
+}
+
+
+.letra-espaco {
+    width: 0.3em;
+}
+
+/* Slide da esquerda — cards de direito */
+@keyframes slideFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+.card-direito.active .card-header,
+.card-direito.active .item-direito,
+.card-direito.active .card-alerta {
+    animation: slideFromLeft 0.6s ease forwards;
+}
+
+.card-direito.active .card-header {
+    animation-delay: 0.05s;
+    opacity: 0;
+}
+
+.card-direito.active .item-direito:nth-child(1) {
+    animation-delay: 0.12s;
+    opacity: 0;
+}
+
+.card-direito.active .item-direito:nth-child(2) {
+    animation-delay: 0.2s;
+    opacity: 0;
+}
+
+.card-direito.active .item-direito:nth-child(3) {
+    animation-delay: 0.28s;
+    opacity: 0;
+}
+
+.card-direito.active .item-direito:nth-child(4) {
+    animation-delay: 0.36s;
+    opacity: 0;
+}
+
+.card-direito.active .card-alerta {
+    animation-delay: 0.44s;
+    opacity: 0;
+}
+
+
+
+
+@keyframes slideFromLeftSubtle {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* --- container .idades (números) --- */
+.idades h2 {
+    opacity: 0;
+}
+.idades.visible h2 {
+    animation: slideFromLeftSubtle 0.5s ease forwards;
+}
+.idades.visible h2:nth-child(1) { animation-delay: 0.05s; }
+.idades.visible h2:nth-child(2) { animation-delay: 0.1s; }
+.idades.visible h2:nth-child(3) { animation-delay: 0.15s; }
+.idades.visible h2:nth-child(4) { animation-delay: 0.2s; }
+.idades.visible h2:nth-child(5) { animation-delay: 0.25s; }
+.idades.visible h2:nth-child(6) { animation-delay: 0.3s; }
+.idades.visible h2:nth-child(7) { animation-delay: 0.35s; }
+.idades.visible h2:nth-child(8) { animation-delay: 0.4s; }
+
+/* --- linha cronológica (círculos) --- */
+.linha .circulo {
+    opacity: 0;
+}
+.linha-cronologica.visible .linha .circulo {
+    animation: slideFromLeftSubtle 0.5s ease forwards;
+}
+.linha-cronologica.visible .linha .circulo:nth-child(1) { animation-delay: 0.05s; }
+.linha-cronologica.visible .linha .circulo:nth-child(2) { animation-delay: 0.1s; }
+.linha-cronologica.visible .linha .circulo:nth-child(3) { animation-delay: 0.15s; }
+.linha-cronologica.visible .linha .circulo:nth-child(4) { animation-delay: 0.2s; }
+.linha-cronologica.visible .linha .circulo:nth-child(5) { animation-delay: 0.25s; }
+.linha-cronologica.visible .linha .circulo:nth-child(6) { animation-delay: 0.3s; }
+.linha-cronologica.visible .linha .circulo:nth-child(7) { animation-delay: 0.35s; }
+.linha-cronologica.visible .linha .circulo:nth-child(8) { animation-delay: 0.4s; }
+
+/* --- container-textos-info-idades (slide sutil, antes da animação letra por letra) --- */
+.container-textos-info-idades {
+    opacity: 0;
+}
+.container-textos-info-idades.visible {
+    animation: slideFromLeftSubtle 0.45s ease forwards;
+}
+.container-textos-info-idades:nth-child(1).visible { animation-delay: 0.05s; }
+.container-textos-info-idades:nth-child(2).visible { animation-delay: 0.1s; }
+.container-textos-info-idades:nth-child(3).visible { animation-delay: 0.15s; }
+.container-textos-info-idades:nth-child(4).visible { animation-delay: 0.2s; }
+.container-textos-info-idades:nth-child(5).visible { animation-delay: 0.25s; }
+.container-textos-info-idades:nth-child(6).visible { animation-delay: 0.3s; }
+.container-textos-info-idades:nth-child(7).visible { animation-delay: 0.35s; }
+.container-textos-info-idades:nth-child(8).visible { animation-delay: 0.4s; }
+
+
+/* ====== Animação fontes (mesma slideFromLeft dos cards) ====== */
+
+.container-fontes h1,
+.container-fontes p {
+    opacity: 0;
+}
+.container-fontes.visible h1,
+.container-fontes.visible p {
+    animation: slideFromLeft 0.6s ease forwards;
+}
+.container-fontes.visible h1 {
+    animation-delay: 0.05s;
+}
+.container-fontes.visible p:nth-of-type(1) {
+    animation-delay: 0.15s;
+}
+.container-fontes.visible p:nth-of-type(2) {
+    animation-delay: 0.25s;
 }

@@ -27,7 +27,7 @@ header nav{
     align-items: center;
     justify-content: space-between;
 }
-nav ul{
+nav .nav-links{
     display: flex;
     flex-direction: row;
     gap: 25px;
@@ -44,7 +44,7 @@ nav ul{
         }
     }
 }
-nav button{
+nav button.btn-quiz-nav{
     background-color: #15164C;
     padding: 8px 10px;
     border-radius: 20px;
