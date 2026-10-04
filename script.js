@@ -120,3 +120,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (idades) slideObserver.observe(idades);
     if (linhaCrono) slideObserver.observe(linhaCrono);
 });
+
+console.log('pedro peida caldo de cana');
+
