@@ -3,6 +3,22 @@ html {
     /* essa regra no css deixa o scroll suave quando clica no link para a pessoa ser redirecionada pra alguma parte do site */
 }
 
+.nav-links li a::after {
+    content: '';
+    width: 0;
+    height: 5px;
+    background-color: #15164C;
+    bottom: -10px;
+    left: 0;
+    position: absolute;
+    border-radius: 50px;
+    transition: width 0.5s ease-in-out;
+}
+
+.nav-links li a:hover::after {
+    width: 100%;
+}
+
 .btn-quiz-nav{
     transition: 0.5s all ease-in-out;
 }
